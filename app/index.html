@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Início | Studio Dev</title>
+  <link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="barra">
+      <span class="logo">Studio Dev</span>
+      <nav aria-label="Navegação principal"><a href="/index.html" aria-current="page">Início</a><a href="/servicos.html">Serviços</a><a href="/sobre.html">Sobre</a><a href="/contato.html">Contato</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Bem-vindo ao Studio Dev</h1>
+      <p>Criamos sites e sistemas web sob medida para o seu negócio.</p>
+      <div class="campo" style="max-width:320px">
+        <label for="nome-visitante">Seu nome</label>
+        <input type="text" id="nome-visitante" placeholder="Digite seu nome">
+      </div>
+      <p id="saudacao" role="status" aria-live="polite"></p>
+      <div class="botoes">
+        <a class="botao" href="/servicos.html">Ver serviços</a>
+        <button type="button" id="btn-contador">Curtir</button>
+        <button type="button" id="btn-tema" class="secundario">Alternar tema</button>
+      </div>
+      <p class="contador">Curtidas: <strong id="contador">0</strong></p>
+    </section>
+  </main>
+  <footer>© 2026 Studio Dev — site de demonstração para testes com Playwright</footer>
+  <script>
+    const campo = document.getElementById('nome-visitante');
+    const saudacao = document.getElementById('saudacao');
+    campo.addEventListener('input', () => {
+      saudacao.textContent = campo.value.trim() ? `Olá, ${campo.value.trim()}! Seja bem-vindo(a).` : '';
+    });
+    let curtidas = 0;
+    document.getElementById('btn-contador').addEventListener('click', () => {
+      curtidas++;
+      document.getElementById('contador').textContent = curtidas;
+    });
+    document.getElementById('btn-tema').addEventListener('click', () => document.body.classList.toggle('escuro'));
+  </script>
+</body>
+</html>

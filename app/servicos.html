@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serviços | Studio Dev</title>
+  <link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="barra">
+      <span class="logo">Studio Dev</span>
+      <nav aria-label="Navegação principal"><a href="/index.html">Início</a><a href="/servicos.html" aria-current="page">Serviços</a><a href="/sobre.html">Sobre</a><a href="/contato.html">Contato</a></nav>
+    </div>
+  </header>
+  <main>
+    <h1>Nossos serviços</h1>
+    <div class="campo" style="max-width:320px;margin-bottom:20px">
+      <label for="busca">Buscar serviço</label>
+      <input type="text" id="busca" placeholder="Ex.: site, loja, app">
+    </div>
+    <ul class="cards" id="lista-servicos">
+      <li data-nome="site institucional"><h3>Site institucional</h3><p>Presença online profissional para a sua empresa.</p></li>
+      <li data-nome="loja virtual"><h3>Loja virtual</h3><p>E-commerce completo com carrinho e pagamento.</p></li>
+      <li data-nome="aplicativo mobile"><h3>Aplicativo mobile</h3><p>Apps para Android e iOS com React Native.</p></li>
+      <li data-nome="sistema de gestão"><h3>Sistema de gestão</h3><p>Controle de estoque, vendas e relatórios.</p></li>
+    </ul>
+    <p id="sem-resultado" hidden>Nenhum serviço encontrado.</p>
+  </main>
+  <footer>© 2026 Studio Dev — site de demonstração para testes com Playwright</footer>
+  <script>
+    const busca = document.getElementById('busca');
+    const itens = [...document.querySelectorAll('#lista-servicos li')];
+    busca.addEventListener('input', () => {
+      const termo = busca.value.trim().toLowerCase();
+      let visiveis = 0;
+      itens.forEach((li) => {
+        const mostrar = li.dataset.nome.includes(termo);
+        li.hidden = !mostrar;
+        if (mostrar) visiveis++;
+      });
+      document.getElementById('sem-resultado').hidden = visiveis > 0;
+    });
+  </script>
+</body>
+</html>

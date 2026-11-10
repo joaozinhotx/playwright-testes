@@ -1,0 +1,81 @@
+
+Running 40 tests using 1 worker
+
+  ✓   1 [chromium] › tests/01-acesso.spec.js:4:3 › 1. Acesso à aplicação › a página inicial carrega com status 200 (372ms)
+  ✓   2 [chromium] › tests/01-acesso.spec.js:10:3 › 1. Acesso à aplicação › o título da aba está correto (348ms)
+  ✓   3 [chromium] › tests/01-acesso.spec.js:15:3 › 1. Acesso à aplicação › o título principal (h1) e o menu estão visíveis (327ms)
+  ✓   4 [chromium] › tests/01-acesso.spec.js:21:3 › 1. Acesso à aplicação › a API do servidor responde com status "ok" (49ms)
+  ✓   5 [chromium] › tests/01-acesso.spec.js:27:3 › 1. Acesso à aplicação › uma rota inexistente retorna a página 404 (249ms)
+  ✓   6 [chromium] › tests/01-acesso.spec.js:33:3 › 1. Acesso à aplicação › a página não gera erros no console (201ms)
+  ✓   7 [chromium] › tests/02-navegacao.spec.js:11:5 › 2. Navegação entre páginas › o link "Serviços" do menu leva à página correta (390ms)
+  ✓   8 [chromium] › tests/02-navegacao.spec.js:11:5 › 2. Navegação entre páginas › o link "Sobre" do menu leva à página correta (388ms)
+  ✓   9 [chromium] › tests/02-navegacao.spec.js:11:5 › 2. Navegação entre páginas › o link "Contato" do menu leva à página correta (408ms)
+  ✓  10 [chromium] › tests/02-navegacao.spec.js:19:3 › 2. Navegação entre páginas › o menu marca a página atual (aria-current) (236ms)
+  ✓  11 [chromium] › tests/02-navegacao.spec.js:25:3 › 2. Navegação entre páginas › o botão "Ver serviços" da home leva à página de serviços (404ms)
+  ✓  12 [chromium] › tests/02-navegacao.spec.js:31:3 › 2. Navegação entre páginas › o botão "Fale conosco" da página Sobre leva ao formulário (392ms)
+  ✘  13 [chromium] › tests/02-navegacao.spec.js:37:3 › 2. Navegação entre páginas › o botão voltar do navegador retorna à página anterior (299ms)
+  ✓  14 [chromium] › tests/02-navegacao.spec.js:44:3 › 2. Navegação entre páginas › todos os links internos do menu respondem com status 200 (412ms)
+  ✓  15 [chromium] › tests/03-elementos.spec.js:4:3 › 3. Elementos gráficos (botões, campos e outros) › o botão "Curtir" incrementa o contador a cada clique (413ms)
+  ✓  16 [chromium] › tests/03-elementos.spec.js:14:3 › 3. Elementos gráficos (botões, campos e outros) › o botão "Alternar tema" liga e desliga o modo escuro (425ms)
+  ✓  17 [chromium] › tests/03-elementos.spec.js:23:3 › 3. Elementos gráficos (botões, campos e outros) › o campo de texto exibe a saudação personalizada (377ms)
+  ✓  18 [chromium] › tests/03-elementos.spec.js:31:3 › 3. Elementos gráficos (botões, campos e outros) › o campo de busca filtra a lista de serviços (293ms)
+  ✓  19 [chromium] › tests/03-elementos.spec.js:40:3 › 3. Elementos gráficos (botões, campos e outros) › a busca sem resultado mostra a mensagem de aviso (336ms)
+  ✓  20 [chromium] › tests/03-elementos.spec.js:48:3 › 3. Elementos gráficos (botões, campos e outros) › é possível selecionar uma opção na lista e marcar o checkbox (441ms)
+  ✓  21 [chromium] › tests/04-formularios.spec.js:15:3 › 4. Formulários › preenche e envia o formulário com dados válidos (560ms)
+  ✓  22 [chromium] › tests/04-formularios.spec.js:29:3 › 4. Formulários › o formulário é limpo depois do envio com sucesso (548ms)
+  ✓  23 [chromium] › tests/04-formularios.spec.js:45:3 › 4. Formulários › o envio dispara uma requisição POST para /api/contato com os dados digitados (561ms)
+  ✓  24 [chromium] › tests/04-formularios.spec.js:65:3 › 4. Formulários › o envio com Enter dentro do campo de texto também submete o formulário (495ms)
+  ✓  25 [chromium] › tests/05-validacao.spec.js:4:3 › 5. Validação de mensagens, títulos e elementos › exibe os títulos e rótulos esperados no formulário (291ms)
+  ✓  26 [chromium] › tests/05-validacao.spec.js:14:3 › 5. Validação de mensagens, títulos e elementos › exige o aceite antes de enviar (338ms)
+  ✓  27 [chromium] › tests/05-validacao.spec.js:20:3 › 5. Validação de mensagens, títulos e elementos › mostra todas as mensagens de erro quando o formulário está vazio (418ms)
+  ✓  28 [chromium] › tests/05-validacao.spec.js:32:3 › 5. Validação de mensagens, títulos e elementos › rejeita e-mail em formato inválido e destaca o campo (513ms)
+  ✓  29 [chromium] › tests/05-validacao.spec.js:46:3 › 5. Validação de mensagens, títulos e elementos › rejeita mensagem muito curta (604ms)
+  ✓  30 [chromium] › tests/05-validacao.spec.js:57:3 › 5. Validação de mensagens, títulos e elementos › as mensagens de erro somem após corrigir os dados e reenviar (710ms)
+  ✓  31 [chromium] › tests/05-validacao.spec.js:73:3 › 5. Validação de mensagens, títulos e elementos › a API valida os dados também no servidor (resposta 400) (28ms)
+  ✓  32 [chromium] › tests/05-validacao.spec.js:81:3 › 5. Validação de mensagens, títulos e elementos › a página Sobre contém o texto institucional esperado (268ms)
+  ✓  33 [chromium] › tests/06-capturas.spec.js:8:3 › 6. Captura de tela (screenshots) › captura a página inicial (307ms)
+  ✓  34 [chromium] › tests/06-capturas.spec.js:13:3 › 6. Captura de tela (screenshots) › captura a página de serviços e a busca filtrada (387ms)
+  ✓  35 [chromium] › tests/06-capturas.spec.js:20:3 › 6. Captura de tela (screenshots) › captura a página Sobre (286ms)
+  ✓  36 [chromium] › tests/06-capturas.spec.js:25:3 › 6. Captura de tela (screenshots) › captura o formulário vazio, com erros e com sucesso (1.1s)
+  ✓  37 [chromium] › tests/06-capturas.spec.js:45:3 › 6. Captura de tela (screenshots) › captura o modo escuro (564ms)
+  ✓  38 [chromium] › tests/06-capturas.spec.js:52:3 › 6. Captura de tela (screenshots) › captura a versão mobile (celular) (444ms)
+  ✓  39 [chromium] › tests/06-capturas.spec.js:60:3 › 6. Captura de tela (screenshots) › captura um elemento específico (card de serviço) (352ms)
+  ✓  40 [chromium] › tests/06-capturas.spec.js:65:3 › 6. Captura de tela (screenshots) › captura a página 404 (272ms)
+
+
+  1) [chromium] › tests/02-navegacao.spec.js:37:3 › 2. Navegação entre páginas › o botão voltar do navegador retorna à página anterior 
+
+    Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'Serviços' }) resolved to 2 elements:
+        1) <a href="/servicos.html">Serviços</a> aka getByRole('link', { name: 'Serviços', exact: true })
+        2) <a class="botao" href="/servicos.html">Ver serviços</a> aka getByRole('link', { name: 'Ver serviços' })
+
+    Call log:
+      - waiting for getByRole('link', { name: 'Serviços' })
+
+
+      37 |   test('o botão voltar do navegador retorna à página anterior', async ({ page }) => {
+      38 |     await page.goto('/');
+    > 39 |     await page.getByRole('link', { name: 'Serviços' }).click();
+         |                                                        ^
+      40 |     await page.goBack();
+      41 |     await expect(page).toHaveURL(/\/$/);
+      42 |   });
+        at /home/claude/playwright-testes/tests/02-navegacao.spec.js:39:56
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/02-navegacao-2-Navegação-e-3caa4-r-retorna-à-página-anterior-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/02-navegacao-2-Navegação-e-3caa4-r-retorna-à-página-anterior-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/02-navegacao-2-Navegação-e-3caa4-r-retorna-à-página-anterior-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/02-navegacao-2-Navegação-e-3caa4-r-retorna-à-página-anterior-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/02-navegacao.spec.js:37:3 › 2. Navegação entre páginas › o botão voltar do navegador retorna à página anterior 
+  39 passed (18.3s)

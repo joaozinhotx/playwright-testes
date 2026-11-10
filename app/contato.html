@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Studio Dev</title>
+  <link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="barra">
+      <span class="logo">Studio Dev</span>
+      <nav aria-label="Navegação principal"><a href="/index.html">Início</a><a href="/servicos.html">Serviços</a><a href="/sobre.html">Sobre</a><a href="/contato.html" aria-current="page">Contato</a></nav>
+    </div>
+  </header>
+  <main>
+    <h1>Fale conosco</h1>
+    <form id="form-contato" novalidate>
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" autocomplete="name">
+        <span class="erro" id="erro-nome" role="alert"></span>
+      </div>
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" autocomplete="email">
+        <span class="erro" id="erro-email" role="alert"></span>
+      </div>
+      <div class="campo">
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto">
+          <option value="">Selecione...</option>
+          <option value="orcamento">Orçamento</option>
+          <option value="suporte">Suporte</option>
+          <option value="parceria">Parceria</option>
+        </select>
+        <span class="erro" id="erro-assunto" role="alert"></span>
+      </div>
+      <div class="campo">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+        <span class="erro" id="erro-mensagem" role="alert"></span>
+      </div>
+      <div class="campo" style="flex-direction:row;align-items:center;gap:8px">
+        <input type="checkbox" id="aceite" name="aceite">
+        <label for="aceite" style="margin:0;font-weight:400">Concordo em ser contatado(a)</label>
+      </div>
+      <span class="erro" id="erro-aceite" role="alert"></span>
+      <button type="submit">Enviar mensagem</button>
+      <div id="resultado" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+  <footer>© 2026 Studio Dev — site de demonstração para testes com Playwright</footer>
+  <script>
+    const form = document.getElementById('form-contato');
+    const campos = ['nome', 'email', 'assunto', 'mensagem'];
+
+    function limpar() {
+      campos.forEach((c) => {
+        document.getElementById('erro-' + c).textContent = '';
+        document.getElementById(c).classList.remove('invalido');
+      });
+      document.getElementById('erro-aceite').textContent = '';
+      document.getElementById('resultado').innerHTML = '';
+    }
+
+    form.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      limpar();
+      if (!document.getElementById('aceite').checked) {
+        document.getElementById('erro-aceite').textContent = 'É necessário concordar em ser contatado(a).';
+        return;
+      }
+      const dados = {};
+      campos.forEach((c) => (dados[c] = document.getElementById(c).value));
+
+      const resposta = await fetch('/api/contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados),
+      });
+      const json = await resposta.json();
+
+      if (!json.ok) {
+        Object.entries(json.erros).forEach(([campo, msg]) => {
+          document.getElementById('erro-' + campo).textContent = msg;
+          document.getElementById(campo).classList.add('invalido');
+        });
+        return;
+      }
+      document.getElementById('resultado').innerHTML =
+        `<div class="sucesso">Mensagem enviada com sucesso! Protocolo: <strong>${json.protocolo}</strong></div>`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>

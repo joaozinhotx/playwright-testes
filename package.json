@@ -1,0 +1,15 @@
+{
+  "name": "playwright-testes-servidor-web",
+  "version": "1.0.0",
+  "description": "Atividade de Pesquisa e Prática - Testes automatizados com Playwright em servidores web",
+  "scripts": {
+    "start": "node servidor.js",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

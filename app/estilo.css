@@ -1,0 +1,27 @@
+:root { --cor: #4f46e5; --fundo: #f8fafc; --texto: #0f172a; --card: #ffffff; --borda: #e2e8f0; }
+body.escuro { --fundo: #0f172a; --texto: #f1f5f9; --card: #1e293b; --borda: #334155; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; background: var(--fundo); color: var(--texto); line-height: 1.6; }
+header { background: var(--cor); color: #fff; }
+header .barra { max-width: 960px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
+header .logo { font-weight: 700; font-size: 1.2rem; }
+nav a { color: #fff; text-decoration: none; margin-left: 20px; padding-bottom: 4px; }
+nav a[aria-current="page"] { border-bottom: 2px solid #fff; font-weight: 600; }
+main { max-width: 960px; margin: 32px auto; padding: 0 20px; }
+h1 { font-size: 2rem; margin-top: 0; }
+.hero { background: var(--card); border: 1px solid var(--borda); border-radius: 16px; padding: 36px; }
+.botoes { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+button, .botao { background: var(--cor); color: #fff; border: 0; border-radius: 8px; padding: 10px 18px; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; }
+button.secundario { background: transparent; color: var(--cor); border: 2px solid var(--cor); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 0; list-style: none; }
+.cards li { background: var(--card); border: 1px solid var(--borda); border-radius: 12px; padding: 20px; }
+.cards h3 { margin-top: 0; }
+form { background: var(--card); border: 1px solid var(--borda); border-radius: 16px; padding: 28px; max-width: 560px; }
+.campo { margin-bottom: 16px; display: flex; flex-direction: column; }
+label { font-weight: 600; margin-bottom: 4px; }
+input[type=text], input[type=email], select, textarea { padding: 10px; border: 1px solid var(--borda); border-radius: 8px; font-size: 1rem; background: var(--fundo); color: var(--texto); }
+input.invalido, select.invalido, textarea.invalido { border-color: #dc2626; }
+.erro { color: #dc2626; font-size: .875rem; margin-top: 4px; min-height: 1em; }
+.sucesso { background: #dcfce7; color: #166534; border: 1px solid #86efac; padding: 14px; border-radius: 8px; margin-top: 16px; }
+.contador { font-size: 1.1rem; margin-top: 16px; }
+footer { text-align: center; padding: 24px; color: #64748b; font-size: .9rem; }
